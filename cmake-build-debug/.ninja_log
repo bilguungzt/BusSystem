@@ -1,0 +1,15 @@
+# ninja log v5
+12	1138	1715564369428888693	CMakeFiles/BusSystem.dir/Stop.cpp.o	bd8445d16d348948
+12	1153	1715566137909450007	CMakeFiles/BusSystem.dir/Route.cpp.o	6d188d62763faa99
+1153	1230	1715566137989132652	BusSystem	98979dbbbd04b25a
+13	1679	1715566022034494206	CMakeFiles/BusSystem.dir/main.cpp.o	1dfdc2ba422825e1
+6	127	1715570234660249519	build.ninja	11863ed715bb08ea
+10	342	1715570235004494843	CMakeFiles/BusSystem.dir/MetroPass.cpp.o	74cbef4153abce7d
+9	343	1715570235004497333	CMakeFiles/BusSystem.dir/Bus.cpp.o	64a4671cb670a791
+342	396	1715570235064715063	CMakeFiles/BusSystem.dir/Transaction.cpp.o	e4c6dd37ac472bc0
+9	1168	1715570235830932539	CMakeFiles/BusSystem.dir/People.cpp.o	b85cf5299d6ae403
+9	1291	1715570235953810751	CMakeFiles/BusSystem.dir/Passenger.cpp.o	92ec33f199af34f4
+8	1428	1715570236087185177	CMakeFiles/BusSystem.dir/main.cpp.o	1dfdc2ba422825e1
+9	1442	1715570236101152705	CMakeFiles/BusSystem.dir/Route.cpp.o	6d188d62763faa99
+16	1537	1715570724233110438	CMakeFiles/BusSystem.dir/main.cpp.o	1dfdc2ba422825e1
+1538	1786	1715570724481510232	BusSystem	868ffe42b9c6d06c
