@@ -3,6 +3,9 @@
 #include "Route.hpp"
 #include "Passenger.hpp"
 #include "Stop.hpp"
+#include "Bus.hpp"
+#include "Transaction.hpp"
+#include "MetroPass.hpp"
 using namespace std;
 
 		//functions to be used in bus class
