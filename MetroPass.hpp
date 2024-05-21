@@ -1,19 +1,35 @@
 //
-// Created by Bilguun on 5/12/24.
+//  MetroPass.hpp
+//  Presentation_Bus
+//
+//  Created by Junyoung Kim on 5/14/24.
 //
 
-#ifndef METROPASS_H
-#define METROPASS_H
-class MetroPass {
-public:
-    MetroPass(int id, double balance);
-    int getId() const;
-    double getBalance() const;
-    void addBalance(double amount);
-    void deductBalance(double amount);
-    // bool swipe(double rideCost);
+#ifndef METROPASS_HPP_
+#define METROPASS_HPP_
+
+#include <string>
+#include <iostream>
+//#include "Transaction.hpp"
+using namespace std;
+
+class MetroPass
+{
 private:
-    int id;
     double balance;
+    //    bool swipeCheck;
+    double price;
+public:
+    MetroPass();
+    MetroPass(double balance, double price);
+    void setBalance(double balance);
+    void setPrice(double price);
+    double getBalance();
+    double getPrice();
+    void withdrawl(double amount);
+    void add(double amount);
+    bool swipe(double price);
+    bool swipe();
 };
-#endif //METROPASS_H
+
+#endif /* METROPASS_HPP_ */

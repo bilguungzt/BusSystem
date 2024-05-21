@@ -1,23 +1,56 @@
 //
-// Created by Bilguun on 5/12/24.
+//  Transaction.hpp
+//  Presentation_Bus
+//
+//  Created by Junyoung Kim on 5/14/24.
 //
 
-#ifndef TRANSACTION_H
-#define TRANSACTION_H
-#include <string>
-#include <ctime>
+#ifndef TRANSACTION_HPP_
+#define TRANSACTION_HPP_
+
+#include "Passenger.hpp"
+
+struct Node{
+	//Node members/aspects
+	Stop* boardLocation;
+	int time;
+	string name;
+	Node* next;
+	Node * prev;
+
+	//constructors
+	Node(Stop* boardLocation, int startTime, string name, Node* next, Node* prev){
+		this->boardLocation = boardLocation;
+		this->time = startTime;
+		this->name = name;
+		this->next = next;
+		this->prev = prev;
+	}
+
+	Node(){
+		Node(nullptr, 0, "", nullptr, nullptr);
+	}
+
+	friend ostream & operator << (ostream &out, const Node & node);
+};
 
 class Transaction {
-public:
-    Transaction(int transaction_id, int pass_id, double amount, std::time_t timestamp);
-    int getTransactionId() const;
-    int getPassId() const;
-    double getAmount() const;
-    std::time_t getTimestap() const;
 private:
-    int transaction_id;
-    int pass_id;
-    double amount;
-    std::time_t timestamp;
+	Node* head;
+	Node* tail;
+	int size;
+	void deleteList(Node* node);
+	void displayTime(int time) const;
+	void deleteNode(string passengerName);
+public:
+	Transaction();
+	virtual ~Transaction();
+	void pushback(Stop* passengerStop, int timeOfSwipe, string passengerName);    //passenger class will send the args
+	void pushBack(Node* node);
+	void display();
+	void displayBackwards();
+	void writeToFile(string filename="output.txt");
 };
-#endif //TRANSACTION_H
+
+#endif /* TRANSACTION_HPP_ */
+

@@ -1,3 +1,10 @@
+//
+//  Stop.cpp
+//  Presentation_Bus
+//
+//  Created by Junyoung Kim on 5/14/24.
+//
+
 #include "Stop.hpp"
 
 Stop::Stop() {
@@ -20,10 +27,10 @@ Stop::Stop(Stop* stop){
 		setTrafficFactor(stop->trafficFactor);
 	}
 
-//	this->nextStop = stop->nextStop;
-//	this->name = stop->name;
-//	this->timeToNextStop = stop->timeToNextStop;
-//	this->trafficFactor = stop->trafficFactor;
+	//    this->nextStop = stop->nextStop;
+	//    this->name = stop->name;
+	//    this->timeToNextStop = stop->timeToNextStop;
+	//    this->trafficFactor = stop->trafficFactor;
 }
 
 int Stop::updateTime(){
@@ -35,7 +42,7 @@ int Stop::updateTime(){
 
 void Stop::setNextStop(Stop* nextStop){
 	if(nextStop != this){
-	this->nextStop = nextStop;
+		this->nextStop = nextStop;
 	}
 	else{
 		this->nextStop = nullptr;
@@ -80,3 +87,4 @@ int Stop::getTimeToNextStop() const{
 int Stop::getTrafficFactor() const{
 	return this->trafficFactor;
 }
+

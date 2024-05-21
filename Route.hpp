@@ -1,3 +1,10 @@
+//
+//  Route.hpp
+//  Presentation_Bus
+//
+//  Created by Junyoung Kim on 5/14/24.
+//
+
 #ifndef ROUTE_HPP_
 #define ROUTE_HPP_
 
@@ -15,9 +22,9 @@ private:
 	Stop* stopLocation;
 	int timeElapsed;
 	void deleteList(Stop* stop);
-//	void setCurrentLocation(Stop* currentLocation);
-	void updateTime();		//will update timeElapsed
-	void readFromFile(const string& fileName);
+	//    void setCurrentLocation(Stop* currentLocation);
+	void updateTime();        //will update timeElapsed
+	void readFromFile(string fileName);
 public:
 	Route();
 	Route(Stop* startLocation, Stop* currentLocation, Stop* stopLocation, int timeElapsed);
@@ -28,9 +35,10 @@ public:
 	Stop* getStartLocation() const;
 	Stop* getCurrentLocation() const;
 	Stop* getStopLocation() const;
-	void nextStop();		// will set the currentLocation to be the next
+	void nextStop();        // will set the currentLocation to be the next
 	void displayStops();
 	void updateTrafficFactors();
 };
 
 #endif /* ROUTE_HPP_ */
+

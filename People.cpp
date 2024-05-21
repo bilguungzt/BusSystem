@@ -1,7 +1,13 @@
+//
+//  People.cpp
+//  Presentation_Bus
+//
+//  Created by Junyoung Kim on 5/14/24.
+//
+
 #include "People.hpp"
 
 People::People() {
-	// TODO Auto-generated constructor stub
 	People("GenericFirst", "GenericLast");
 
 }
@@ -30,3 +36,4 @@ void People::setLastName(string lastName)
 {
 	this->lastName = lastName;
 }
+

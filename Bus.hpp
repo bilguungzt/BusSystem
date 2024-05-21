@@ -1,33 +1,45 @@
-//
-// Created by Bilguun on 5/12/24.
-//
-
-#ifndef BUS_H
-#define BUS_H
+#ifndef BUS_HPP
+#define BUS_HPP
 
 #include "Route.hpp"
 #include "Passenger.hpp"
-#include "MetroPass.hpp"
 #include "Transaction.hpp"
 #include <vector>
-
+#include <string>
 
 class Bus {
-public:
-    Bus(int bus_id, const Route& route);
-    int getBusId() const;
-    Route getRoute() const;
-    void addPassenger(const Passenger& passenger);
-    void removePassenger(const std::string& name);
-    std::vector<Passenger> getPassenger() const;
-    void logTransaction(const Transaction& transaction);
 private:
-    int bus_id;
-    Route route;
-    std::vector<Passenger> passengers;
-    std::vector<Transaction> transactions;
+    int capacity;
+    int numOfRiders;
+    double rideCost;
+    Passenger** passengers;
+    Route* path;
+    Transaction* log;
+    int startTime;
+
+public:
+    Bus();
+    Bus(Bus* otherBus);
+    Bus(int capacity, double rideCost, Route* path, int startTime);
+    ~Bus();
+
+    bool acceptPassenger(Passenger* passenger);
+    void offloadPassenger(Passenger* passenger, Stop* currentStop);
+//    void startRoute();
+    void writeLog();
+    Route* getRoute() const;
+    bool atEnd() const;
+    bool isFull() const;
+    Stop* getCurrentStop() const;
+    void initializeRoute();
+    int getStartTime() const;
+    void offloadPassengers();
+    void nextStop();
+    void printRouteTime();
+    std::vector<Passenger*> readPassengersFromFile(const std::string& fileName);
+private:
+    void shiftArray(int startPos, int endPos);
+    int timeToInt(string time);
 };
 
-
-
-#endif //BUS_H
+#endif // BUS_HPP

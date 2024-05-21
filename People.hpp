@@ -1,3 +1,10 @@
+//
+//  People.hpp
+//  Presentation_Bus
+//
+//  Created by Junyoung Kim on 5/14/24.
+//
+
 #ifndef PEOPLE_HPP_
 #define PEOPLE_HPP_
 
@@ -20,3 +27,4 @@ public:
 };
 
 #endif /* PEOPLE_HPP_ */
+
